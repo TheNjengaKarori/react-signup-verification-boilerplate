@@ -11,7 +11,7 @@
         "start": "webpack-dev-server --open"
     },
     "dependencies": {
-        "formik": "^2.1.4",
+        "formik": "^2.2.9",
         "history": "^4.10.1",
         "prop-types": "^15.7.2",
         "query-string": "^6.11.0",
@@ -19,7 +19,7 @@
         "react-dom": "^16.8.6",
         "react-router-dom": "^5.0.0",
         "rxjs": "^6.3.3",
-        "yup": "^0.28.1"
+        "yup": "^0.28.5"
     },
     "devDependencies": {
         "@babel/core": "^7.4.3",
