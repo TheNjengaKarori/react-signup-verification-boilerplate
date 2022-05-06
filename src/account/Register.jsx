@@ -20,6 +20,8 @@ function Register({ history }) {
         swiftMini:'',
         swiftPrime:'',
         swiftXtra:'',
+        haveCar:'',
+        needCar:'',
         acceptTerms: false
     };
     const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/
@@ -49,6 +51,12 @@ function Register({ history }) {
             .required('Confirm Password is required'),
         acceptTerms: Yup.bool()
             .oneOf([true], 'Accept Terms & Conditions is required'),
+
+            haveCar: Yup.bool()
+            .oneOf([true], 'Select one of the driver options'),
+            needCar: Yup.bool()
+            .oneOf([true], 'Select one of the driver options'),
+
             swiftBoda: Yup.bool()
             .oneOf([true], 'Select one of the driver options'),
             swiftMini: Yup.bool()
@@ -150,7 +158,18 @@ function Register({ history }) {
                         </div>
                         </div>
 
-
+                        <div className="form-row ml-3">
+                        <div className="form-group form-check col">
+                            <Field type="checkbox" name="haveCar" id="haveCar" className={'form-check-input ' + (errors.haveCar && touched.haveCar ? ' is-invalid' : '')} />
+                            <label htmlFor="haveCar" className="form-check-label">I have a car</label>
+                            <ErrorMessage name="haveCar" component="div" className="invalid-feedback" />
+                        </div>
+                        <div className="form-group form-check col">
+                            <Field type="checkbox" name="needCar" id="needCar" className={'form-check-input ' + (errors.needCar && touched.needCar ? ' is-invalid' : '')} />
+                            <label htmlFor="needCar" className="form-check-label">I need a car</label>
+                            <ErrorMessage name="needCar" component="div" className="invalid-feedback" />
+                        </div>
+                        </div>
                         <div className="form-group form-check">
                             <Field type="checkbox" name="acceptTerms" id="acceptTerms" className={'form-check-input ' + (errors.acceptTerms && touched.acceptTerms ? ' is-invalid' : '')} />
                             <label htmlFor="acceptTerms" className="form-check-label">Accept Terms & Conditions</label>
